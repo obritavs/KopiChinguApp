@@ -1,115 +1,140 @@
+
 /* Custom properties from Shop.css for color consistency */
 :root {
   --kopi-cobalt: #0047AB; 
   --kopi-primary-dark: #072661; 
   --kopi-secondary-dark: #37548A; 
-  --kopi-light-gold: #FFD700; 
-  --kopi-text-light: #555;
-  --kopi-text-dark: #333;
+  --kopi-light-gold: #FFC72C; /* Slightly brighter gold for pop */
+  --kopi-text-light: #6c757d; /* Slightly cooler light text */
+  --kopi-text-dark: #212529; /* Deeper dark text */
+  --modern-bg-color: #f7f9fc; /* Very light, modern background */
+  --modern-card-shadow: 0 6px 16px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.04);
 }
 
 .profile-content {
-    --background: #f0f0f5; 
-    font-family: 'Poppins', sans-serif;
+  --background: var(--modern-bg-color); 
+  font-family: 'Poppins', sans-serif;
 }
 
+/* --- 1. Profile Card (Header) --- */
 .profile-header-card {
-    width: 100%;
-    margin: 0; 
-    border-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
-    padding: 20px 0;
+  width: 100%;
+  margin: 0; 
+  border-radius: 0;
+  /* Use a subtle, modern shadow on the card */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+  padding: 30px 0 25px 0; /* More vertical padding */
+  background: #ffffff;
 }
 
 .profile-avatar {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 10px;
-    background: #e0e0e0; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    border: 3px solid var(--kopi-cobalt);
-    overflow: hidden;
+  width: 90px; /* Slightly larger */
+  height: 90px;
+  margin: 0 auto 15px; /* Increased margin */
+  background: var(--modern-bg-color); /* Matches page background for clean look */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  /* Subtle, cleaner border */
+  border: 3px solid var(--kopi-cobalt); 
+  box-shadow: 0 0 0 4px rgba(0, 71, 171, 0.1); /* Soft highlight */
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Hover/Focus effect is a modern touch if the user can interact */
+.profile-avatar:hover {
+    transform: scale(1.03);
 }
 
 .profile-avatar ion-icon {
-    font-size: 60px !important;
-    color: var(--kopi-secondary-dark); 
+  font-size: 65px !important; /* Slightly larger icon */
+  color: var(--kopi-secondary-dark); 
 }
 
 /* Text and Titles */
 .profile-header-card h1 {
-    font-size: 1.6em;
-    font-weight: 700;
-    color: var(--kopi-text-dark);
+  font-size: 1.8em; /* Slightly larger, more dominant */
+  font-weight: 700;
+  color: var(--kopi-text-dark);
+  letter-spacing: -0.5px;
 }
 .profile-header-card p {
-    font-size: 0.9em;
-    color: var(--kopi-text-light);
+  font-size: 0.95em;
+  color: var(--kopi-text-light);
+  margin-top: 4px;
 }
 
-.profile-stats-grid {
-    border-top: 1px solid #f0f0f0;
-    margin-top: 20px !important;
-    padding-top: 20px;
+/* Removed Stats Grid CSS as per previous request */
+
+/* Edit Profile Button */
+.profile-header-card ion-button {
+    font-weight: 600;
+    --color: var(--kopi-cobalt);
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --ion-color-base: transparent !important;
+    transition: background 0.2s ease-in-out;
 }
 
-.profile-stats-grid ion-col {
-    text-align: center;
-    padding: 0 5px;
-}
-
-.profile-stats-grid strong {
-    font-size: 1.3em;
-    font-weight: 800;
-    color: var(--kopi-primary-dark);
-}
-
-.profile-stats-grid p {
-    font-size: 0.8em;
-    font-weight: 500;
-    color: #888;
-}
-
+/* --- 2. Navigation List --- */
 .profile-nav-list {
-    margin: 20px 0 0 0;
-    background: #ffffff; 
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 25px 15px; /* Floating look with margin */
+  background: #ffffff; 
+  border-radius: 16px; /* Increased radius for modern softness */
+  overflow: hidden;
+  /* Layered shadow for depth */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 3px 6px rgba(0, 0, 0, 0.03);
 }
 
 .profile-nav-list ion-item {
-    --padding-start: 16px;
-    --inner-padding-end: 16px;
-    --background-hover: #fcfcfc;
+  --padding-start: 20px; /* Increased padding */
+  --inner-padding-end: 20px;
+  --background-hover: #fcfcfd;
+  transition: background-color 0.2s ease;
+}
+
+.profile-nav-list ion-item:active {
+    --background: #f7f7fa; /* Feedback on press */
 }
 
 .profile-nav-list ion-item h2 {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: var(--kopi-text-dark);
+  font-size: 1.15em;
+  font-weight: 600;
+  color: var(--kopi-text-dark);
 }
 
 .profile-nav-list ion-item p {
-    font-size: 0.9em;
-    color: var(--kopi-text-light);
+  font-size: 0.85em;
+  color: var(--kopi-text-light);
+  margin-top: 2px;
 }
 
 .profile-nav-list ion-icon {
-    font-size: 1.4em;
-    margin-right: 10px;
-}
-.profile-nav-list ion-item:first-child ion-icon {
-    color: var(--kopi-light-gold); 
+  font-size: 1.5em; /* Slightly larger icon */
+  margin-right: 12px;
 }
 
-.profile-nav-list ion-item:nth-child(2) ion-icon {
+/* Consistent color mapping */
+.profile-nav-list ion-item:first-child ion-icon { /* Personal Details */
+    color: var(--kopi-secondary-dark); 
+}
+.profile-nav-list ion-item:nth-child(2) ion-icon { /* Loyalty */
+    color: var(--kopi-light-gold);
+}
+.profile-nav-list ion-item:nth-child(3) ion-icon { /* Order History */
     color: var(--kopi-cobalt);
 }
+.profile-nav-list ion-item:nth-child(4) ion-icon { /* Addresses */
+    color: var(--kopi-primary-dark);
+}
 
-.profile-nav-list ion-item:nth-child(3) ion-icon {
-    color: var(--kopi-cobalt);
+.profile-nav-list ion-item.ion-margin-top {
+    border-top: 1px solid #e9ecef; /* Separator for logout */
+    margin-top: 10px !important;
+}
+
+.profile-nav-list ion-item:last-child {
+    border-radius: 0 0 16px 16px; /* Match list border radius */
 }
