@@ -1,0 +1,40 @@
+type User @table {
+  email: String!
+  passwordHash: String!
+  createdAt: Timestamp!
+  firstName: String
+  lastName: String
+  phoneNumber: String
+  photoURL: String #
+}
+type LoyaltyCard @table {
+  user: User! @link 
+  currentStamps: Int! 
+  rewardGoal: Int! 
+  rewardEarned: Boolean! 
+  tier: String! 
+}
+
+type MenuItem @table {
+  name: String!
+  description: String!
+  price: Float!
+  itemType: String!
+  imageUrl: String
+}
+
+type Order @table {
+  user: User
+  orderDate: Timestamp!
+  totalAmount: Float!
+  status: String!
+  rewardRedeemed: Boolean!
+}
+
+type OrderItem @table {
+  order: Order!
+  menuItem: MenuItem!
+  quantity: Int!
+  priceAtTimeOfOrder: Float!
+  stampEligible: Boolean! 
+}
