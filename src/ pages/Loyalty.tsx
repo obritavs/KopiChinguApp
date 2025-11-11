@@ -17,18 +17,18 @@ import {
     ellipseOutline,
     giftOutline 
 } from 'ionicons/icons';
-import React from 'react';
+import React, { useState, useEffect } from 'react'; 
 import Header from '../components/Header'; 
-import './Loyalty.css';
 
+import { auth, db } from '../firebase-config'; 
+import { doc, getDoc } from 'firebase/firestore'; 
 
-// Define the expected properties for the Loyalty component
-interface LoyaltyProps {
+interface LoyaltyCard {
     currentStamps: number;
-    tier: string;
-    rewardGoal: number;
+    rewardGoal: number; 
+    tier: 'Regular' | 'V.I.P.';
+    userId: string;
 }
-
 
 interface StampSlotProps {
     isEarned: boolean;
@@ -53,15 +53,41 @@ const StampSlot: React.FC<StampSlotProps> = ({ isEarned, number, isReward }) => 
     );
 };
 
-// --- LOYALTY PAGE COMPONENT ---
+const Loyalty: React.FC = () => {
+    const [loyaltyData, setLoyaltyData] = useState<LoyaltyCard | null>(null);
+    const [loading, setLoading] = useState(true);
 
-// Component now accepts props
-const Loyalty: React.FC<LoyaltyProps> = ({ currentStamps = 0, rewardGoal = 10, tier = 'Regular' }) => {
-    // Note: I set default values for robustness, but you should ensure they are provided when used.
+    const fetchLoyaltyData = async () => {
+        const user = auth.currentUser;
+        if (!user) {
+            setLoading(false);
+            return;
+        }
+
+        try {
+            const cardRef = doc(db, 'loyaltyCards', user.uid);
+            const cardSnap = await getDoc(cardRef);
+
+            if (cardSnap.exists()) {
+                setLoyaltyData(cardSnap.data() as LoyaltyCard);
+            }
+        } catch (error) {
+            console.error("Error fetching loyalty data:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchLoyaltyData();
+    }, []);
+
+    const currentStamps = loyaltyData?.currentStamps ?? 0;
+    const rewardGoal = loyaltyData?.rewardGoal ?? 10;
+    const tier = loyaltyData?.tier ?? 'Regular';
 
     const stampsToGoal = rewardGoal - currentStamps;
     
-    // Create an array of stamp slots based on the goal
     const stampSlots = Array.from({ length: rewardGoal }, (_, index) => {
         const number = index + 1;
         return (
@@ -73,6 +99,32 @@ const Loyalty: React.FC<LoyaltyProps> = ({ currentStamps = 0, rewardGoal = 10, t
             />
         );
     });
+    
+    if (loading) {
+         return (
+            <IonPage>
+                <Header title="Stamp Card Loyalty" />
+                <IonContent className="ion-padding ion-text-center">
+                    <IonText color="primary"><p>Loading loyalty card...</p></IonText>
+                </IonContent>
+            </IonPage>
+        );
+    }
+    
+    if (!auth.currentUser) {
+        return (
+            <IonPage>
+                <Header title="Stamp Card Loyalty" />
+                <IonContent className="ion-padding ion-text-center">
+                    <IonText color="danger">
+                        <h2 className="ion-padding-top">Not Logged In</h2>
+                        <p>Please log in to view your loyalty status.</p>
+                    </IonText>
+                </IonContent>
+            </IonPage>
+        );
+    }
+
 
     return (
         <IonPage>
@@ -80,7 +132,6 @@ const Loyalty: React.FC<LoyaltyProps> = ({ currentStamps = 0, rewardGoal = 10, t
 
             <IonContent className="loyalty-content">
 
-                {/* --- Current Status Card --- */}
                 <IonCard className="ion-margin-vertical loyalty-status-card">
                     <IonCardContent className="ion-text-center">
                         <IonChip color={tier === 'V.I.P.' ? 'warning' : 'primary'}>
@@ -101,19 +152,16 @@ const Loyalty: React.FC<LoyaltyProps> = ({ currentStamps = 0, rewardGoal = 10, t
                                 <h1>REWARD EARNED! Claim your free coffee.</h1>
                             </IonText>
                         )}
-                        <p>Total {currentStamps}/{rewardGoal} collected</p>
+                        <p>Total **{currentStamps}/{rewardGoal}** collected</p>
                     </IonCardContent>
                 </IonCard>
 
-                {/* --- Stamp Grid Visualization --- */}
                 <IonCard className="ion-margin-horizontal stamp-card">
                     <IonCardContent>
                         <IonGrid>
-                            {/* Row 1: Stamps 1-5 */}
                             <IonRow className="ion-justify-content-center">
                                 {stampSlots.slice(0, 5)}
                             </IonRow>
-                            {/* Row 2: Stamps 6-10 */}
                             <IonRow className="ion-justify-content-center ion-margin-top">
                                 {stampSlots.slice(5, 10)}
                             </IonRow>
@@ -121,17 +169,16 @@ const Loyalty: React.FC<LoyaltyProps> = ({ currentStamps = 0, rewardGoal = 10, t
                     </IonCardContent>
                 </IonCard>
 
-                {/* --- Program Details --- */}
                 <IonCard className="ion-margin-horizontal ion-margin-bottom">
                     <IonCardContent>
                         <IonText color="dark">
                             <h3>How It Works:</h3>
                         </IonText>
                         <ul>
-                            <li>Earn 1 Stamp for every coffee drink purchase (any size).</li>
-                            <li>Collect {rewardGoal} stamps to unlock a free standard drink of your choice.</li>
+                            <li>Earn **1 Stamp** for every **completed order** (delivery or pick-up).</li>
+                            <li>Collect **{rewardGoal} stamps** to unlock a free standard drink of your choice.</li>
                             <li>Stamps reset to zero upon redemption, starting your journey to the next reward!</li>
-                            <li>Your {tier} status grants you early access to new seasonal drinks.</li>
+                            <li>Your **{tier}** status grants you early access to new seasonal drinks.</li>
                         </ul>
                     </IonCardContent>
                 </IonCard>
