@@ -1,0 +1,25 @@
+.checkout-page {
+    --ion-tab-bar-display: none;
+}
+
+.checkout-content {
+    --padding-bottom: 100px; 
+}
+
+.checkout-total-row {
+    --background: var(--ion-color-light);
+    border-top: 2px solid var(--ion-color-step-150, #d7d8da); 
+    margin-top: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+ion-select {
+    padding-left: 0;
+}
+
+.card-details-container {
+    padding: 10px 0;
+    width: 100%;
+    padding: 15px; 
+}
