@@ -1,0 +1,115 @@
+/* Custom properties from Shop.css for color consistency */
+:root {
+  --kopi-cobalt: #0047AB; 
+  --kopi-primary-dark: #072661; 
+  --kopi-secondary-dark: #37548A; 
+  --kopi-light-gold: #FFD700; 
+  --kopi-text-light: #555;
+  --kopi-text-dark: #333;
+}
+
+.profile-content {
+    --background: #f0f0f5; 
+    font-family: 'Poppins', sans-serif;
+}
+
+.profile-header-card {
+    width: 100%;
+    margin: 0; 
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    padding: 20px 0;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+    background: #e0e0e0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 3px solid var(--kopi-cobalt);
+    overflow: hidden;
+}
+
+.profile-avatar ion-icon {
+    font-size: 60px !important;
+    color: var(--kopi-secondary-dark); 
+}
+
+/* Text and Titles */
+.profile-header-card h1 {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--kopi-text-dark);
+}
+.profile-header-card p {
+    font-size: 0.9em;
+    color: var(--kopi-text-light);
+}
+
+.profile-stats-grid {
+    border-top: 1px solid #f0f0f0;
+    margin-top: 20px !important;
+    padding-top: 20px;
+}
+
+.profile-stats-grid ion-col {
+    text-align: center;
+    padding: 0 5px;
+}
+
+.profile-stats-grid strong {
+    font-size: 1.3em;
+    font-weight: 800;
+    color: var(--kopi-primary-dark);
+}
+
+.profile-stats-grid p {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #888;
+}
+
+.profile-nav-list {
+    margin: 20px 0 0 0;
+    background: #ffffff; 
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.profile-nav-list ion-item {
+    --padding-start: 16px;
+    --inner-padding-end: 16px;
+    --background-hover: #fcfcfc;
+}
+
+.profile-nav-list ion-item h2 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--kopi-text-dark);
+}
+
+.profile-nav-list ion-item p {
+    font-size: 0.9em;
+    color: var(--kopi-text-light);
+}
+
+.profile-nav-list ion-icon {
+    font-size: 1.4em;
+    margin-right: 10px;
+}
+.profile-nav-list ion-item:first-child ion-icon {
+    color: var(--kopi-light-gold); 
+}
+
+.profile-nav-list ion-item:nth-child(2) ion-icon {
+    color: var(--kopi-cobalt);
+}
+
+.profile-nav-list ion-item:nth-child(3) ion-icon {
+    color: var(--kopi-cobalt);
+}
