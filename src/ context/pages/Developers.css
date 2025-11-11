@@ -1,0 +1,59 @@
+
+.dev-list {
+    background: transparent; 
+    padding-top: 10px;
+    padding-bottom: 90px;
+}
+
+.dev-list .dev-item {
+    --padding-start: 0;
+    --padding-end: 0;
+    --inner-padding-end: 0;
+    margin-bottom: 15px; 
+  
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--ion-color-light);
+    overflow: hidden;
+}
+
+.dev-thumbnail {
+    --size: 70px; 
+    margin-right: 15px;
+    border-radius: 50%;
+    border: 3px solid var(--ion-color-primary, #3880ff); 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.dev-item h3 {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--ion-color-dark);
+    margin-bottom: 2px;
+}
+
+.dev-item p {
+    font-size: 0.9rem;
+    color: var(--ion-color-medium);
+    margin-top: 0;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ion-color-primary);
+    border: 1px solid var(--ion-color-primary);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.github-link ion-icon {
+    margin-right: 5px;
+    font-size: 1.1rem;
+}
