@@ -1,0 +1,60 @@
+/* src/pages/Loyalty.css */
+
+/* --- Card Styles --- */
+
+.loyalty-status-card {
+    box-shadow: none; /* Make status stand out less like a traditional card */
+    border-radius: 0;
+}
+
+.loyalty-status-card h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.stamp-card {
+    background: var(--ion-color-light); /* Light background for the stamp grid */
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+/* --- Stamp Slot Styles --- */
+
+.stamp-col {
+    padding: 5px;
+}
+
+.stamp-circle {
+    position: relative;
+    border-radius: 50%;
+    height: 60px; 
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.stamp-circle.earned {
+    background: var(--ion-color-warning-contrast); /* Light color for earned background */
+    border: 3px solid var(--ion-color-warning); /* Gold border for earned */
+}
+
+.stamp-circle.empty {
+    background: var(--ion-color-light-shade);
+    border: 2px dashed var(--ion-color-medium);
+}
+
+.stamp-number {
+    position: absolute;
+    bottom: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.stamp-circle.reward ion-icon {
+    font-size: 1.8rem;
+}
