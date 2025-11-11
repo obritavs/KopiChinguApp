@@ -101,14 +101,14 @@ const Loyalty: React.FC = () => {
     });
     
     if (loading) {
-         return (
-            <IonPage>
-                <Header title="Stamp Card Loyalty" />
-                <IonContent className="ion-padding ion-text-center">
-                    <IonText color="primary"><p>Loading loyalty card...</p></IonText>
-                </IonContent>
-            </IonPage>
-        );
+          return (
+              <IonPage>
+                  <Header title="Stamp Card Loyalty" />
+                  <IonContent className="ion-padding ion-text-center">
+                      <IonText color="primary"><p>Loading loyalty card...</p></IonText>
+                  </IonContent>
+              </IonPage>
+          );
     }
     
     if (!auth.currentUser) {
@@ -152,7 +152,7 @@ const Loyalty: React.FC = () => {
                                 <h1>REWARD EARNED! Claim your free coffee.</h1>
                             </IonText>
                         )}
-                        <p>Total **{currentStamps}/{rewardGoal}** collected</p>
+                        <p>Total {currentStamps}/{rewardGoal} collected</p>
                     </IonCardContent>
                 </IonCard>
 
@@ -175,10 +175,10 @@ const Loyalty: React.FC = () => {
                             <h3>How It Works:</h3>
                         </IonText>
                         <ul>
-                            <li>Earn **1 Stamp** for every **completed order** (delivery or pick-up).</li>
-                            <li>Collect **{rewardGoal} stamps** to unlock a free standard drink of your choice.</li>
+                            <li>Earn 1 Stamp for every completed order (delivery or pick-up).</li>
+                            <li>Collect {rewardGoal} stamps to unlock a free standard drink of your choice.</li>
                             <li>Stamps reset to zero upon redemption, starting your journey to the next reward!</li>
-                            <li>Your **{tier}** status grants you early access to new seasonal drinks.</li>
+                            <li>Your {tier} status grants you early access to new seasonal drinks.</li>
                         </ul>
                     </IonCardContent>
                 </IonCard>
