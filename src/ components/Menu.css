@@ -1,0 +1,90 @@
+
+:root {
+  --kopi-cobalt: #0047AB; 
+  --kopi-primary-dark: #072661; 
+  --kopi-secondary-dark: #37548A; 
+  --kopi-light-gold: #FFD700; 
+  --kopi-text-light: #555;
+  --kopi-text-dark: #333;
+}
+
+ion-menu#main-menu ion-content {
+  --background: #fff; 
+  --padding-bottom: 20px;
+}
+#menu-header {
+ 
+  background: var(--kopi-primary-dark);
+  color: white;
+  padding: 30px 20px 20px 20px;
+  margin-bottom: 10px; 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+#menu-header .logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8em;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+#menu-header .menu-slogan {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 300;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+ion-list#app-list,
+ion-list#utility-list {
+  padding: 0;
+}
+
+ion-list#utility-list {
+
+  border-top: 1px solid #f0f0f0; 
+  padding-top: 10px;
+  margin-top: 15px;
+}
+ion-item {
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --inner-padding-end: 20px;
+  --min-height: 50px;
+  color: var(--kopi-text-dark);
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+}
+
+ion-item ion-icon {
+  font-size: 1.4em;
+  margin-right: 15px;
+  color: var(--kopi-secondary-dark);
+  transition: color 0.15s ease-in-out;
+}
+
+
+ion-item.selected {
+  --background: rgba(var(--kopi-cobalt), 0.1); 
+  color: var(--kopi-cobalt); 
+  border-left: 5px solid var(--kopi-light-gold);
+  padding-left: 15px; 
+}
+
+ion-item.selected ion-icon {
+  color: var(--kopi-cobalt); 
+}
+
+
+ion-item.logout-button {
+  color: var(--ion-color-danger, #eb445a); 
+  margin-top: 5px;
+  --background-hover: rgba(235, 68, 90, 0.05); 
+}
+
+ion-item.logout-button ion-icon {
+  color: var(--ion-color-danger, #eb445a);
+}
