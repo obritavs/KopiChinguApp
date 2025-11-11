@@ -1,0 +1,78 @@
+
+.orders-content {
+    --padding-top: 10px;
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-bottom: 100px;
+}
+
+ion-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+ion-card-header {
+    padding-bottom: 0;
+}
+ion-card-title.order-id {
+    font-size: 1.1em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    color: var(--ion-color-primary); 
+    margin-bottom: 5px;
+}
+
+ion-card-title ion-icon {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* Styling for the Date/Subtitle */
+ion-card-subtitle {
+    display: flex;
+    align-items: center;
+    color: var(--ion-color-medium);
+    font-size: 0.85em;
+    padding-left: 0; /* Remove default padding */
+}
+
+ion-card-subtitle ion-icon {
+    margin-right: 5px;
+}
+
+/* Styling for the list of items within the card */
+ion-list {
+    background: none; /* Ensure list background is transparent */
+    padding: 0 10px 10px 10px;
+}
+
+ion-list ion-item {
+    --padding-start: 16px;
+    --inner-padding-end: 16px;
+    font-size: 0.9em;
+    color: var(--ion-color-dark);
+}
+
+/* Styling for the final summary item (Total and Status) */
+.order-summary-item {
+    --background: var(--ion-color-light); /* Highlight the summary row */
+    font-weight: bold;
+    border-top: 1px solid var(--ion-color-step-100); /* Separator line */
+}
+
+.order-summary-item ion-label {
+    font-size: 1em;
+}
+
+.order-summary-item ion-note {
+    font-weight: bold;
+    font-size: 1em;
+}
+/* In your global CSS file */
+
+.custom-cancel-alert {
+  --background: white; 
+    --message-color: #a00000; /* Dark red message text */
+    --color: #a00000;
+}
