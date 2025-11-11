@@ -1,0 +1,48 @@
+/* src/pages/History.css */
+
+/* Custom class for cobalt blue cards with white text */
+.cobalt-blue-card {
+    background: #072661; 
+    color: white; 
+}
+.cobalt-blue-card p {
+    color: white !important;
+}
+
+.cobalt-blue-card ion-card-title {
+    color: white !important;
+}
+
+.timeline-card ion-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 0px;
+}
+
+.timeline-card ion-icon[slot="start"] {
+    font-size: 2.5rem;
+}
+
+.timeline-card ion-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.timeline-card ion-card-content {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.history-content h1 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--ion-color-medium);
+    padding-bottom: 40px;
+    display: inline-block;
+}
+
+
+.ion-text-justify {
+    text-align: justify !important;
+}
