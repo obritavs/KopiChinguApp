@@ -1,0 +1,105 @@
+:root {
+  --ion-background-color: #d5dbba;
+  --cobalt-blue: #0047ab;
+}
+
+
+.intro-container {
+  background-color: var(--ion-background-color);
+  font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.intro-card {
+  background: #ffffff;
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 80px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.intro-logo {
+  width: 500px;  
+  height: auto;
+  margin-bottom: 2.2rem;
+}
+
+
+.intro-title {
+  color: var(--cobalt-blue);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.intro-text {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 20px 2.5rem 20px;
+  text-align: center;
+  max-width: 340px;
+}
+
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.sign-in-btn {
+  --background: var(--cobalt-blue);
+  --color: #fff;
+  --border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sign-up-btn {
+  --border-color: var(--cobalt-blue);
+  --color: var(--cobalt-blue);
+  --border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+.sign-in-btn:hover {
+  filter: brightness(1.1);
+}
+
+.sign-up-btn:hover {
+  background-color: rgba(0, 71, 171, 0.08);
+}
+
+
+@media (max-height: 700px) {
+  .intro-logo {
+    width: 140px; 
+  }
+  .intro-title {
+    font-size: 1.8rem;
+  }
+  .intro-text {
+    font-size: 1rem;
+  }
+}
