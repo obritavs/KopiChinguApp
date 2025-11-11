@@ -1,0 +1,449 @@
+.shop-content {
+    --background: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --kopi-cobalt: #0047AB; 
+    --kopi-primary-dark: #072661; 
+    --kopi-secondary-dark: #37548A; 
+    --kopi-light-gold: #FFD700; 
+    --kopi-text-light: #555;
+    --kopi-text-dark: #333;
+    
+}
+
+/* --- HEADER CHANGES --- */
+ion-header {
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+ion-toolbar {
+    --background: var(--kopi-primary-dark); 
+    --color: #ffffff; 
+    padding: 0;
+    margin: 0;
+    --padding-top: 0;
+    --padding-bottom: 0;
+}
+
+ion-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.cart-icon-white {
+    --color: #ffffff; 
+}
+
+.shop-content ion-content {
+  
+    --padding-top: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-bottom: 0;
+}
+.top-search-section {
+    padding: 16px 16px; 
+    margin-top: 0px;
+    text-align: left;
+    background: linear-gradient(to right, var(--kopi-primary-dark), var(--kopi-primary-dark)); 
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.greeting-text {
+    font-size: 1.1em;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.9);
+    padding-top: 8px;
+}
+
+.search-bar {
+    padding-bottom: 0;
+    margin: 0 !important;
+}
+
+.kopi-searchbar {
+    --background: rgba(255, 255, 255, 0.95);
+    --color: var(--kopi-text-dark);
+    --placeholder-color: #888;
+    --icon-color: #888;
+    border-radius: 10px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container {
+    position: relative;
+    margin: 0; 
+    padding: 0; 
+}
+
+.featured-carousel-scroll {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 5px; 
+    padding-left: 16px; 
+    padding-right: 16px; 
+    
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.featured-carousel-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.featured-product-card {
+    --background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    
+    flex-shrink: 0; 
+    width: 85vw;
+    margin: 15px 10px 20px 0;
+    scroll-snap-align: start;
+}
+
+.featured-product-image {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.featured-card-header {
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.featured-icon {
+    font-size: 1.2em;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.featured-product-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--kopi-primary-dark); 
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.featured-product-price {
+    font-size: 1.1em;
+    color: #777;
+    font-weight: 600;
+}
+
+/* --- BUTTON CHANGES --- */
+.featured-order-button {
+    --background: var(--kopi-primary-dark); 
+    --color: white;
+    --box-shadow: none;
+    border-radius: 8px;
+    height: 45px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    --padding-start: 0;
+    --padding-end: 0;
+    --color: var(--kopi-primary-dark); 
+    font-size: 2.2em;
+    opacity: 0; 
+    pointer-events: none;
+}
+@media (min-width: 768px) {
+    .carousel-arrow {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .carousel-arrow.left { left: 0; }
+    .carousel-arrow.right { right: 0; }
+}
+
+
+/* --- Category Segment Styles --- */
+.shop-categories-segment {
+    --background: transparent;
+    padding: 0 16px;
+    margin: 20px 0;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.shop-categories-segment::-webkit-scrollbar {
+    display: none;
+}
+
+.shop-categories-segment ion-segment-button {
+    --background: #fff;
+    --background-checked: var(--kopi-primary-dark); 
+    --color: var(--kopi-text-light);
+    --color-checked: white;
+    --indicator-color: transparent;
+    --border-radius: 20px;
+    min-width: 120px;
+    margin: 0 5px;
+    transition: all 0.2s ease-in-out;
+    padding: 8px 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.shop-categories-segment ion-segment-button ion-icon {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+.shop-categories-segment ion-segment-button ion-label {
+    font-weight: 600;
+}
+
+/* --- Product List Container (Grid) Styles --- */
+.product-list {
+   padding: 0 12px;
+    margin-bottom: 20px;
+}
+
+.product-list h3 {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--kopi-text-dark);
+    margin-bottom: 15px;
+    padding-left: 0;
+}
+
+.kopi-product-grid-card {
+    --background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin: 0 0 16px 0; 
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-container {
+    height: 140px; 
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.product-grid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-img-container:hover .product-grid-image {
+    transform: scale(1.05);
+}
+
+.kopi-product-grid-card ion-card-header {
+    padding: 10px 8px 5px 8px;
+    text-align: center;
+    
+}
+
+.kopi-product-grid-card {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+
+.product-grid-title {
+    font-size: 1.05em; /* Changed from 1.00em back to 1.05em, as 1.00em was too small. If you want a smaller font, use 0.95em */
+    font-weight: 600;
+    color: var(--kopi-text-dark);
+    text-align: center;
+    overflow: hidden; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal; 
+    text-overflow: ellipsis; 
+}
+.kopi-product-grid-card ion-card-content {
+    padding: 0 9px 9px 9px;
+    width: 100%;
+}
+
+.kopi-product-grid-card ion-row {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.kopi-product-grid-card ion-col {
+    padding: 0;
+}
+
+/* Grid Add/View Button Style */
+.kopi-product-grid-card ion-button {
+    --padding-start: 4px;
+    --padding-end: 4px;
+    --min-width: 38px;
+    height: 38px;
+    font-size: 1.2em;
+    --color: var(--kopi-primary-dark); /* Updated grid button icon/text color to dark blue */
+}
+
+/* --- Product Details Modal Styling --- */
+ion-modal {
+    --ion-toolbar-background: var(--kopi-primary-dark); /* Updated Modal Toolbar background */
+    --ion-toolbar-color: white;
+}
+
+.product-modal-details {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.product-modal-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-modal-details h2 {
+    color: var(--kopi-primary-dark);
+    font-weight: 700;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.product-modal-price {
+    font-size: 1.4em;
+    font-weight: 800;
+    color: var(--kopi-primary-dark); /* Updated Modal Price color to dark blue */
+    margin-bottom: 20px;
+    display: block;
+}
+
+.product-modal-details h4 {
+    color: var(--kopi-text-dark);
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-modal-details p {
+    color: var(--kopi-text-light);
+    line-height: 1.5;
+}
+
+/* Modal Buttons Styling */
+.product-modal-details .add-to-cart-button {
+    --background: var(--kopi-primary-dark); /* Updated Add to Cart button to dark blue */
+    --color: white;
+    --box-shadow: 0 4px 10px rgba(7, 38, 97, 0.3); /* Subtle shadow for depth using primary dark */
+    font-weight: bold;
+    height: 50px;
+    margin-top: 25px; 
+    border-radius: 12px;
+    font-size: 1.1em;
+}
+
+.product-modal-details .add-to-favorites-button {
+    --background: transparent;
+    --color: var(--kopi-primary-dark); /* Updated Favorite button text to dark blue */
+    --border-color: var(--kopi-primary-dark); /* Updated Favorite button border to dark blue */
+    --border-style: solid;
+    --border-width: 2px;
+    --box-shadow: none;
+    font-weight: bold;
+    height: 50px;
+    margin-top: 15px; 
+    border-radius: 12px;
+    font-size: 1.1em;
+}
+
+.product-modal-details .add-to-favorites-button ion-icon {
+    color: var(--kopi-primary-dark); /* Updated Favorite icon to dark blue */
+}
+
+.product-modal-details .add-to-favorites-button.favorite-active {
+    --background: var(--kopi-primary-dark); /* Updated Active Favorite button background to dark blue */
+    --color: white;
+}
+.product-modal-details .add-to-favorites-button.favorite-active ion-icon {
+    color: white;
+}
+
+
+/* --- Toast (Unchanged) --- */
+ion-toast.hydrated {
+    --background: var(--kopi-primary-dark); /* Updated Toast background to dark blue */
+    --color: white;
+    text-align: center;
+}
+/* Add these styles within the modernStyles string */
+    .banner-carousel-container {
+        margin-top: 15px;
+        margin-bottom: 25px;
+        padding: 0 16px;
+    }
+
+    .banner-carousel-scroll {
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px;
+        padding-bottom: 5px;
+    }
+
+    .banner-carousel-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .banner-card {
+        flex: 0 0 90%; /* Banners slightly wider than ads */
+        max-width: 90%;
+        scroll-snap-align: start;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        min-height: 120px;
+        cursor: pointer;
+    }
+    
+    .banner-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
