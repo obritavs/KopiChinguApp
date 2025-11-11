@@ -1,0 +1,64 @@
+.signup-page {
+  --background: linear-gradient(180deg, #fef6f0 0%, #fff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-container {
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  background: #ffffffcc;
+  border-radius: 25px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(150, 130, 100, 0.1);
+}
+
+.signup-title {
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  font-size: 2rem;
+  color: #200870;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.signup-subtitle {
+  color: #334090;
+  font-family: "Noto Sans KR", sans-serif;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.input-box {
+  margin-bottom: 1rem;
+  --background: #fffdf9;
+  border-radius: 12px;
+  border: 1px solid #e0d6c2;
+  padding: 0.5rem 0.8rem;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 0.95rem;
+}
+
+.signup-button {
+  --background: #200870;;
+  --background-activated: #b58a60;
+  font-family: "Noto Sans KR", sans-serif;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.login-text {
+  margin-top: 1rem;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #200870;
+  font-size: 0.9rem;
+}
+
+.login-link {
+  color: #200870;
+  font-weight: 700;
+  cursor: pointer;
+}
